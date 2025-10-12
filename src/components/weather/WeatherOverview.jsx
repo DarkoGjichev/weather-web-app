@@ -11,9 +11,14 @@ function WeatherOverview({ latitude, longitude }) {
     });
   }, []);
 
+  if (!weatherData) return <p>Loading...</p>;
+
   return (
     <main>
-      <WeatherDay />
+      <WeatherDay
+        current={weatherData.current}
+        currentUnits={weatherData.current_units}
+      />
     </main>
   );
 }
