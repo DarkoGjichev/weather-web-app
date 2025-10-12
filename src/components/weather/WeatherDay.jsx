@@ -1,11 +1,11 @@
 import WeatherCurrent from "./WeatherCurrent";
 import WeatherHourly from "./WeatherHourly";
 
-function WeatherDay({ current, currentUnits }) {
+function WeatherDay({ current, currentUnits, hourly, date }) {
   return (
     <>
       <WeatherCurrent current={current} currentUnits={currentUnits} />
-      <WeatherHourly />
+      <WeatherHourly hourly={hourly} date={date} />
     </>
   );
 }
