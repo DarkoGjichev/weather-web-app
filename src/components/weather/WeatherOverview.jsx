@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import getWeather from "../../api/getWeather";
 import WeatherDay from "./WeatherDay";
+import WeatherDaily from "./WeatherDaily";
 
 function WeatherOverview({ latitude, longitude }) {
   const [weatherData, setWeatherData] = useState(null);
@@ -22,6 +23,10 @@ function WeatherOverview({ latitude, longitude }) {
         currentUnits={weatherData.current_units}
         hourly={weatherData.hourly}
         date={date}
+      />
+      <WeatherDaily
+        daily={weatherData.daily}
+        dailyUnits={weatherData.daily_units}
       />
     </main>
   );
