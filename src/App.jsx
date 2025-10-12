@@ -3,14 +3,16 @@ import Header from "./components/Header";
 import WeatherOverview from "./components/weather/WeatherOverview";
 
 function App() {
-  const [location, setLocation] = useState({});
+  const [location, setLocation] = useState(null);
   return (
     <>
       <Header setLocation={setLocation} />
-      <WeatherOverview
-        latitude={location.latitude}
-        longitude={location.longitude}
-      />
+      {location && (
+        <WeatherOverview
+          latitude={location.latitude}
+          longitude={location.longitude}
+        />
+      )}
     </>
   );
 }
