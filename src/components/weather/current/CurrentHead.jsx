@@ -1,7 +1,7 @@
 function CurrentHead({ time, date }) {
   if (time) {
     return (
-      <header>
+      <header className="flex flex-row justify-between font-2 border-b border-white">
         <h2>CURRENT WEATHER</h2>
         <p>
           Last updated:{" "}
@@ -16,7 +16,7 @@ function CurrentHead({ time, date }) {
     );
   } else {
     return (
-      <header>
+      <header className="flex flex-row justify-between font-2 border-b border-white">
         <h2>WEATHER FOR: {date}</h2>
       </header>
     );

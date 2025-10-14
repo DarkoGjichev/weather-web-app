@@ -1,5 +1,6 @@
 import CurrentBody from "./current/CurrentBody";
 import CurrentHead from "./current/CurrentHead";
+import "../../app.css";
 
 function WeatherCurrent({ current, currentUnits, daily, dailyUnits, date }) {
   const weather = {
@@ -34,7 +35,7 @@ function WeatherCurrent({ current, currentUnits, daily, dailyUnits, date }) {
       currentUnits?.precipitation ?? dailyUnits?.precipitation_sum?.[0],
   };
   return (
-    <section>
+    <section className="container">
       <CurrentHead time={current?.time} date={date} />
       <CurrentBody weather={weather} />
     </section>
