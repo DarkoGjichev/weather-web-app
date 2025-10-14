@@ -4,7 +4,7 @@ function DayCard({ daily, dailyUnits }) {
     temperature_max: daily.temperature_2m_max[i],
     temperature_min: daily.temperature_2m_min[i],
     weather_code: daily.weather_code[i],
-    precipitation: daily.precipitation_probability_max[i],
+    precipitation: daily.precipitation_sum[i],
   }));
 
   return sevenDayForecast.map((day) => (
@@ -27,7 +27,7 @@ function DayCard({ daily, dailyUnits }) {
       <p>{day.weather_code}</p>
       <p>
         Precipitation: {day.precipitation}
-        {dailyUnits.precipitation_probability_max}
+        {dailyUnits.precipitation_sum}
       </p>
     </div>
   ));
