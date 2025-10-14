@@ -46,6 +46,8 @@ function WeatherOverview({ latitude, longitude }) {
         currentUnits={weatherData.current_units}
         hourly={weatherData.hourly}
         date={date}
+        daily={weatherData.daily}
+        dailyUnits={weatherData.daily_units}
       />
       <WeatherDaily
         daily={weatherData.daily}
