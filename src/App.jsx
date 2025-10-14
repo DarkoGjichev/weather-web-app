@@ -1,11 +1,12 @@
 import { useState } from "react";
 import Header from "./components/Header";
 import WeatherOverview from "./components/weather/WeatherOverview";
+import "./app.css";
 
 function App() {
   const [location, setLocation] = useState(null);
   return (
-    <>
+    <main className="app--main">
       <Header setLocation={setLocation} />
       {location && (
         <WeatherOverview
@@ -13,7 +14,7 @@ function App() {
           longitude={location.longitude}
         />
       )}
-    </>
+    </main>
   );
 }
 
