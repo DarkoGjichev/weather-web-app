@@ -16,11 +16,19 @@ function Header({ setLocation }) {
   };
 
   return (
-    <header className="container">
-      <button onClick={() => handleClick("Middlesbrough")}>
+    <header className="container flex justify-center items-center gap-6">
+      <button
+        className="bg-white/20 py-2 px-8 rounded-[30px] text-white text-base font-medium shadow-md cursor-pointer"
+        onClick={() => handleClick("Middlesbrough")}
+      >
         Middlesbrough
       </button>
-      <button onClick={() => handleClick("Bicester")}>Bicester</button>
+      <button
+        className="bg-white/10 py-2 px-8 rounded-[30px] text-white text-base font-medium shadow-md cursor-pointer"
+        onClick={() => handleClick("Bicester")}
+      >
+        Bicester
+      </button>
     </header>
   );
 }

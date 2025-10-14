@@ -6,7 +6,7 @@ import "./app.css";
 function App() {
   const [location, setLocation] = useState(null);
   return (
-    <main className="app--main">
+    <main className="app--main flex p-4 flex-col gap-4">
       <Header setLocation={setLocation} />
       {location && (
         <WeatherOverview
