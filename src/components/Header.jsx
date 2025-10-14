@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import getLocation from "../api/getLocation";
+import "../app.css";
 
 function Header({ setLocation }) {
   const [city, setCity] = useState("Middlesbrough");
@@ -15,7 +16,7 @@ function Header({ setLocation }) {
   };
 
   return (
-    <header>
+    <header className="container">
       <button onClick={() => handleClick("Middlesbrough")}>
         Middlesbrough
       </button>
