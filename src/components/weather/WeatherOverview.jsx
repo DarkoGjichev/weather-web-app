@@ -14,6 +14,7 @@ function WeatherOverview({ latitude, longitude }) {
   const today = new Date().toISOString().split("T")[0];
 
   const handleChange = (date) => {
+    date.setHours(12, 0, 0, 0);
     const formattedDate = date.toISOString().split("T")[0];
     setDate(formattedDate);
   };
