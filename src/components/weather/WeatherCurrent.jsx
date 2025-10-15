@@ -35,7 +35,7 @@ function WeatherCurrent({ current, currentUnits, daily, dailyUnits, date }) {
       currentUnits?.precipitation ?? dailyUnits?.precipitation_sum?.[0],
   };
   return (
-    <section className="container">
+    <section className="w-full max-w-full container">
       <CurrentHead time={current?.time} date={date} />
       <CurrentBody weather={weather} />
     </section>
