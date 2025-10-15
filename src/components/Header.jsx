@@ -1,17 +1,8 @@
-import { useEffect, useState } from "react";
-import getLocation from "../api/getLocation";
 import "../app.css";
 import CityButton from "./header/CityButton";
 
-function Header({ setLocation }) {
-  const [city, setCity] = useState("Middlesbrough");
+function Header({ city, setCity }) {
   const cityList = ["Middlesbrough", "Bicester"];
-
-  useEffect(() => {
-    getLocation(city).then((data) => {
-      setLocation(data);
-    });
-  }, [setLocation, city]);
 
   const handleClick = (city) => {
     setCity(city);
