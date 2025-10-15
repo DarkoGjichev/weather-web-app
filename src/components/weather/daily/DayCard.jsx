@@ -1,3 +1,7 @@
+import weatherIcon from "../../../utils/weatherIcon";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faDroplet } from "@fortawesome/free-solid-svg-icons";
+
 function DayCard({ daily, dailyUnits }) {
   const sevenDayForecast = daily.time.map((t, i) => ({
     time: t,
@@ -23,13 +27,15 @@ function DayCard({ daily, dailyUnits }) {
         {day.temperature_min}
         {dailyUnits.temperature_2m_min}
       </p>
+      {" - "}
       <p>
         {day.temperature_max}
         {dailyUnits.temperature_2m_max}
       </p>
-      <p>{day.weather_code}</p>
-      <p>
-        Precipitation: {day.precipitation}
+      <p>{weatherIcon(day.weather_code)}</p>
+      <p className="w-[70px] ml-auto">
+        <FontAwesomeIcon icon={faDroplet} className="text-xs" />{" "}
+        {day.precipitation}
         {dailyUnits.precipitation_sum}
       </p>
     </div>
