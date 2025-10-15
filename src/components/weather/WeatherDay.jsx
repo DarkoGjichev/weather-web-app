@@ -10,7 +10,7 @@ function WeatherDay({
   dailyUnits,
 }) {
   return (
-    <>
+    <main className="flex flex-col gap-4">
       <WeatherCurrent
         current={current}
         currentUnits={currentUnits}
@@ -19,7 +19,7 @@ function WeatherDay({
         date={date}
       />
       <WeatherHourly hourly={hourly} date={date} />
-    </>
+    </main>
   );
 }
 
