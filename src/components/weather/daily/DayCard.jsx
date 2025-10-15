@@ -8,7 +8,10 @@ function DayCard({ daily, dailyUnits }) {
   }));
 
   return sevenDayForecast.map((day) => (
-    <div key={day.time}>
+    <div
+      key={day.time}
+      className="flex flex-row gap-2 text-center bg-white/20 rounded-[20px] p-2"
+    >
       <p>
         {new Date(day.time).toLocaleDateString([], {
           weekday: "short",
@@ -17,11 +20,11 @@ function DayCard({ daily, dailyUnits }) {
         })}
       </p>
       <p>
-        Min: {day.temperature_min}
+        {day.temperature_min}
         {dailyUnits.temperature_2m_min}
       </p>
       <p>
-        Max: {day.temperature_max}
+        {day.temperature_max}
         {dailyUnits.temperature_2m_max}
       </p>
       <p>{day.weather_code}</p>

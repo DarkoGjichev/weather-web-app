@@ -1,12 +1,13 @@
 import DayCard from "./daily/DayCard";
+import "../../app.css";
 
 function WeatherDaily({ daily, dailyUnits }) {
   return (
-    <main>
-      <header>
+    <main className="container mt-4">
+      <header className="border-b border-white">
         <h2>7 DAY FORECAST</h2>
       </header>
-      <section>
+      <section className="py-4 flex flex-col gap-2">
         <DayCard daily={daily} dailyUnits={dailyUnits} />
       </section>
     </main>
