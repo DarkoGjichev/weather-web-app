@@ -10,7 +10,7 @@ function WeatherDay({
   dailyUnits,
 }) {
   return (
-    <main className="flex flex-col gap-4">
+    <main className="lg:w-1/2 flex flex-col gap-4">
       <WeatherCurrent
         current={current}
         currentUnits={currentUnits}

@@ -35,26 +35,29 @@ function WeatherOverview({ latitude, longitude }) {
   if (!weatherData) return <p>Loading...</p>;
 
   return (
-    <main>
+    <>
+      {" "}
       <Calendar
         value={date}
         onChange={handleChange}
         minDate={minDate}
         maxDate={maxDate}
       />
-      <WeatherDay
-        current={weatherData.current}
-        currentUnits={weatherData.current_units}
-        hourly={weatherData.hourly}
-        date={date}
-        daily={weatherData.daily}
-        dailyUnits={weatherData.daily_units}
-      />
-      <WeatherDaily
-        daily={weatherData.daily}
-        dailyUnits={weatherData.daily_units}
-      />
-    </main>
+      <main className="max-w-[1035px] flex flex-col lg:flex-row gap-4 mx-auto">
+        <WeatherDay
+          current={weatherData.current}
+          currentUnits={weatherData.current_units}
+          hourly={weatherData.hourly}
+          date={date}
+          daily={weatherData.daily}
+          dailyUnits={weatherData.daily_units}
+        />
+        <WeatherDaily
+          daily={weatherData.daily}
+          dailyUnits={weatherData.daily_units}
+        />
+      </main>
+    </>
   );
 }
 

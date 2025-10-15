@@ -3,7 +3,7 @@ import "../../app.css";
 
 function WeatherDaily({ daily, dailyUnits }) {
   return (
-    <main className="container mt-4">
+    <main className="container">
       <header className="border-b border-white">
         <h2>7 DAY FORECAST</h2>
       </header>
