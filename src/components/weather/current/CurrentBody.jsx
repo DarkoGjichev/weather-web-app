@@ -1,4 +1,5 @@
-import weatherCode from "../../../hooks/weatherCode";
+import weatherCode from "../../../utils/weatherCode";
+import weatherIcon from "../../../utils/weatherIcon";
 
 function CurrentBody({ weather }) {
   return (
@@ -8,7 +9,10 @@ function CurrentBody({ weather }) {
           {weather.temperature_2m}
           {weather.temperature_units_2m}
         </h3>
-        <p>{weatherCode(weather.weather_code)}</p>
+        <p>
+          {weatherIcon(weather.weather_code)}
+          {weatherCode(weather.weather_code)}
+        </p>
         <p>
           Feels like {weather.apparent_temperature}
           {weather.apparent_temperature_units}
