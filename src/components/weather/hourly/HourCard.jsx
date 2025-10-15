@@ -1,3 +1,5 @@
+import weatherIcon from "../../../utils/weatherIcon";
+
 function HourCard({ hourly, date }) {
   const hoursForDay = hourly.time
     .map((t, i) => ({
@@ -18,7 +20,7 @@ function HourCard({ hourly, date }) {
           minute: "2-digit",
         })}
       </p>
-      <p className="text-xl">{hour.weather_code}</p>
+      <p className="text-xl">{weatherIcon(hour.weather_code)}</p>
       <p className="text-xs">{hour.temperature}°C</p>
     </div>
   ));
