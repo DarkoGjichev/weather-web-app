@@ -3,21 +3,13 @@ import getWeather from "../../api/getWeather";
 import getHistoricalWeather from "../../api/getHistoricalWeather";
 import WeatherDay from "./WeatherDay";
 import WeatherDaily from "./WeatherDaily";
-import Calendar from "react-calendar";
+import DatePicker from "../DatePicker";
 import "react-calendar/dist/Calendar.css";
 
 function WeatherOverview({ latitude, longitude }) {
   const [weatherData, setWeatherData] = useState(null);
   const [date, setDate] = useState(null);
-  const minDate = new Date(2022, 0, 1);
-  const maxDate = new Date();
   const today = new Date().toISOString().split("T")[0];
-
-  const handleChange = (date) => {
-    date.setHours(12, 0, 0, 0);
-    const formattedDate = date.toISOString().split("T")[0];
-    setDate(formattedDate);
-  };
 
   useEffect(() => {
     if (!date || date === today) {
@@ -36,14 +28,8 @@ function WeatherOverview({ latitude, longitude }) {
 
   return (
     <>
-      {" "}
-      <Calendar
-        value={date}
-        onChange={handleChange}
-        minDate={minDate}
-        maxDate={maxDate}
-      />
-      <main className="max-w-[1035px] flex flex-col lg:flex-row gap-4 mx-auto">
+      <DatePicker date={date} setDate={setDate} />
+      <main className="max-w-[1035px] lg:flex lg:flex-row gap-4 mx-auto">
         <WeatherDay
           current={weatherData.current}
           currentUnits={weatherData.current_units}
