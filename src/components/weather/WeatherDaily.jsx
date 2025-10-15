@@ -3,7 +3,7 @@ import "../../app.css";
 
 function WeatherDaily({ daily, dailyUnits }) {
   return (
-    <main className="container">
+    <main className="w-full max-w-full container">
       <header className="border-b border-white">
         <h2>7 DAY FORECAST</h2>
       </header>

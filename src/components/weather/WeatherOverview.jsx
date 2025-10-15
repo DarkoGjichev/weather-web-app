@@ -29,7 +29,7 @@ function WeatherOverview({ latitude, longitude }) {
   return (
     <>
       <DatePicker date={date} setDate={setDate} />
-      <main className="max-w-[1035px] lg:flex lg:flex-row gap-4 mx-auto">
+      <main className="max-w-[1035px] w-full flex flex-col lg:flex-row gap-4 mx-auto">
         <WeatherDay
           current={weatherData.current}
           currentUnits={weatherData.current_units}

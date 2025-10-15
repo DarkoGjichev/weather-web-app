@@ -3,7 +3,7 @@ import "../../app.css";
 
 function WeatherHourly({ hourly, date }) {
   return (
-    <main className="container">
+    <main className="w-full max-w-full container">
       <header className="border-b border-white">
         <h2>HOURLY FORECAST</h2>
       </header>
