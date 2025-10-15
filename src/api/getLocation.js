@@ -8,8 +8,8 @@ function getLocation(city) {
     .then((response) => {
       return response.data.results[0];
     })
-    .catch((error) => {
-      console.error(error);
+    .catch(() => {
+      throw new Error();
     });
 }
 export default getLocation;

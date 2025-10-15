@@ -14,8 +14,8 @@ function getHistoricalWeather(latitude, longitude, startDate) {
     .then((response) => {
       return response.data;
     })
-    .catch((error) => {
-      console.error(error);
+    .catch(() => {
+      throw new Error();
     });
 }
 export default getHistoricalWeather;

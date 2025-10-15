@@ -8,8 +8,8 @@ function getWeather(latitude, longitude) {
     .then((response) => {
       return response.data;
     })
-    .catch((error) => {
-      console.error(error);
+    .catch(() => {
+      throw new Error();
     });
 }
 export default getWeather;
