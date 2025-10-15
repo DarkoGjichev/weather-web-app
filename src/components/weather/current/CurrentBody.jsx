@@ -1,3 +1,5 @@
+import weatherCode from "../../../hooks/weatherCode";
+
 function CurrentBody({ weather }) {
   return (
     <main className="flex flex-col gap-4 py-4">
@@ -6,7 +8,7 @@ function CurrentBody({ weather }) {
           {weather.temperature_2m}
           {weather.temperature_units_2m}
         </h3>
-        <p>{weather.weather_code}</p>
+        <p>{weatherCode(weather.weather_code)}</p>
         <p>
           Feels like {weather.apparent_temperature}
           {weather.apparent_temperature_units}
