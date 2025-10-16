@@ -8,8 +8,8 @@ import "react-calendar/dist/Calendar.css";
 
 function WeatherOverview({ latitude, longitude }) {
   const [weatherData, setWeatherData] = useState(null);
-  const [date, setDate] = useState(null);
   const today = new Date().toISOString().split("T")[0];
+  const [date, setDate] = useState(today);
 
   useEffect(() => {
     if (!date || date === today) {
