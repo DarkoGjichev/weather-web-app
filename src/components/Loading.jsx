@@ -1,7 +1,9 @@
 function Loading() {
   return (
     <main>
-      <h2>Loading...</h2>
+      <h2 className="max-w-[1035px] w-full mx-auto text-center text-white">
+        Loading...
+      </h2>
     </main>
   );
 }
