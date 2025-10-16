@@ -9,7 +9,7 @@ import Error from "./components/Error";
 function App() {
   const [city, setCity] = useState("Middlesbrough");
   const { data: location, error, isLoading } = useApiRequest(getLocation, city);
-  console.log(location);
+
   if (isLoading) return <Loading />;
   if (error) return <Error />;
   return (

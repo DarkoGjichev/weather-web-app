@@ -9,7 +9,6 @@ function useApiRequest(apiFunction, ...arg) {
     setIsLoading(true);
     apiFunction(...arg)
       .then((data) => {
-        console.log(data, "<<<<<<<<<<<<<<<<");
         setData(data);
       })
       .catch((error) => {
