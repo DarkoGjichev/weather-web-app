@@ -1,6 +1,9 @@
 import Calendar from "react-calendar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCalendarDays } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCalendarDays,
+  faChevronDown,
+} from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 
 function DatePicker({ date, setDate }) {
@@ -21,8 +24,9 @@ function DatePicker({ date, setDate }) {
         onClick={() => setActive(!active)}
         className="flex flex-row items-center ml-auto text-white"
       >
-        <h3>{date}</h3>
         <FontAwesomeIcon icon={faCalendarDays} />
+        <h3>{date}</h3>
+        <FontAwesomeIcon icon={faChevronDown} className="ml-2" />
       </button>
       {active && (
         <Calendar
