@@ -1,25 +1,11 @@
 import "../app.css";
 import CityButton from "./header/CityButton";
+import Search from "./header/Search";
 
-function Header({ city, setCity }) {
-  const cityList = ["Middlesbrough", "Bicester"];
-
-  const handleClick = (city) => {
-    setCity(city);
-  };
-
+function Header({ setCity }) {
   return (
     <header className="max-w-[1035px] container flex justify-center items-center gap-4 mx-auto  overflow-x-hidden">
-      {cityList.map((singleCity) => {
-        return (
-          <CityButton
-            key={singleCity}
-            singleCity={singleCity}
-            handleClick={handleClick}
-            city={city}
-          />
-        );
-      })}
+      <Search setCity={setCity} />
     </header>
   );
 }
