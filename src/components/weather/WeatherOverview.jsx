@@ -9,7 +9,7 @@ import useApiRequest from "../../hooks/useApiRequest";
 import Loading from "../Loading";
 import Error from "../Error";
 
-function WeatherOverview({ latitude, longitude }) {
+function WeatherOverview({ latitude, longitude, name }) {
   const today = new Date().toISOString().split("T")[0];
   const [date, setDate] = useState(today);
 
@@ -29,7 +29,7 @@ function WeatherOverview({ latitude, longitude }) {
   if (weatherData) {
     return (
       <>
-        <DatePicker date={date} setDate={setDate} />
+        <DatePicker name={name} date={date} setDate={setDate} />
         <main className="max-w-[1035px] w-full flex flex-col lg:flex-row gap-4 mx-auto">
           <WeatherDay
             current={weatherData.current}

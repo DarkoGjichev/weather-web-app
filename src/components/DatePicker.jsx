@@ -6,7 +6,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 
-function DatePicker({ date, setDate }) {
+function DatePicker({ date, setDate, name }) {
   const [active, setActive] = useState(false);
   const minDate = new Date(2022, 0, 1);
   const maxDate = new Date();
@@ -19,7 +19,8 @@ function DatePicker({ date, setDate }) {
   };
 
   return (
-    <main className="relative max-w-[1035px] w-[100%] mx-auto">
+    <main className="relative max-w-[1035px] w-[100%] flex justify-between mx-auto">
+      <h2 className="text-white">{name} </h2>
       <button
         onClick={() => setActive(!active)}
         className="flex flex-row items-center ml-auto text-white"
@@ -30,7 +31,7 @@ function DatePicker({ date, setDate }) {
       </button>
       {active && (
         <Calendar
-          className="absolute right-0 z-1"
+          className="absolute right-0 top-8 z-1"
           value={date}
           onChange={handleChange}
           minDate={minDate}

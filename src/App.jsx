@@ -19,6 +19,7 @@ function App() {
         <WeatherOverview
           latitude={location.latitude}
           longitude={location.longitude}
+          name={location.name}
         />
       )}
     </main>
