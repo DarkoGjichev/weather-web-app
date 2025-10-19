@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 function Search({ setCity }) {
   const [value, setValue] = useState("");
@@ -11,7 +13,10 @@ function Search({ setCity }) {
     setValue("");
   }
   return (
-    <form onSubmit={handleSubmit}>
+    <form
+      className="border border-white/20 pl-6 rounded-[50px]"
+      onSubmit={handleSubmit}
+    >
       <input
         onChange={handleChange}
         type="search"
@@ -19,8 +24,14 @@ function Search({ setCity }) {
         id="city"
         placeholder="Search for a city"
         value={value}
+        className="focus:outline-none focus:ring-0"
       />
-      <button type="submit">Submit</button>
+      <button
+        className=" w-[44px] h-[44px] rounded-[50px] hover:bg-white/20 cursor-pointer"
+        type="submit"
+      >
+        <FontAwesomeIcon icon={faMagnifyingGlass} />
+      </button>
     </form>
   );
 }
